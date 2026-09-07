@@ -1182,17 +1182,21 @@ span:nth-child(2) {
   }
 
   .character-selector {
-    grid-template-columns:
-      repeat(5, minmax(110px, 1fr));
+  display: grid;
 
-    overflow-x: auto;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
-    padding-bottom: 12px;
-  }
+  gap: 14px;
 
-  .character-option {
-    min-width: 110px;
-  }
+  overflow-x: visible;
+
+  padding-bottom: 0;
+}
+
+.character-option {
+  min-width: 0;
+}
 
 }
 
