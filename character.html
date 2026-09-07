@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>CHARACTER | HAREIRU</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="character.css"
+  >
+
+</head>
+
+
+<body class="character-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div id="header"></div>
+
+
+
+<!-- =========================================================
+     CHARACTER
+========================================================= -->
+
+
+<main class="character-main">
+
+
+  <!-- BACKGROUND -->
+
+  <div
+    class="character-grid"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="character-noise"
+    aria-hidden="true"
+  ></div>
+
+
+
+  <!-- =======================================================
+       HEADING
+  ======================================================== -->
+
+
+  <section class="character-heading">
+
+    <p class="character-kicker">
+      HAREIRU WORLD / CHARACTER DATABASE
+    </p>
+
+    <h1>
+      CHARACTER
+    </h1>
+
+    <div class="character-heading-line"></div>
+
+    <p class="character-select-title">
+      SELECT YOUR CHARACTER
+    </p>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CHARACTER DISPLAY
+  ======================================================== -->
+
+
+  <section
+    class="character-display"
+    aria-label="Character information"
+  >
+
+
+    <!-- DATA -->
+
+    <div class="character-data-top">
+
+      <span>
+        SYSTEM : CHARACTER SELECT
+      </span>
+
+      <span id="characterDataNumber">
+        DATA 01 / 05
+      </span>
+
+    </div>
+
+
+
+    <!-- CHARACTER VISUAL -->
+
+    <div class="character-visual">
+
+      <div class="character-visual-frame">
+
+
+        <div
+          class="character-corner character-corner--tl"
+        ></div>
+
+        <div
+          class="character-corner character-corner--tr"
+        ></div>
+
+        <div
+          class="character-corner character-corner--bl"
+        ></div>
+
+        <div
+          class="character-corner character-corner--br"
+        ></div>
+
+
+        <div class="character-image-wrap">
+
+          <img
+            id="characterImage"
+            class="character-image"
+            src="images/character/rabby.png"
+            alt="らびぃ"
+          >
+
+        </div>
+
+
+        <div
+          id="characterImageNumber"
+          class="character-image-number"
+        >
+          01
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         CHARACTER INFO
+    ====================================================== -->
+
+
+    <div class="character-info">
+
+
+      <!-- WORK -->
+
+      <p
+        id="characterWork"
+        class="character-work"
+      >
+        RAPID RABBIT
+      </p>
+
+
+      <!-- NAME -->
+
+      <h2
+        id="characterName"
+        class="character-name"
+      >
+        らびぃ
+      </h2>
+
+
+      <div class="character-info-line"></div>
+
+
+
+      <!-- QUOTE -->
+
+      <div class="character-quote">
+
+        <span class="character-label">
+          QUOTE
+        </span>
+
+        <p id="characterQuote">
+          「らびぃより速いヤツいないの～？？」
+        </p>
+
+      </div>
+
+
+
+      <!-- AFFILIATION / CV -->
+
+      <div class="character-meta-row">
+
+
+        <!-- AFFILIATION -->
+
+        <div class="character-affiliation">
+
+          <span class="character-label">
+            AFFILIATION
+          </span>
+
+          <strong id="characterAffiliation">
+            解体屋
+          </strong>
+
+        </div>
+
+
+
+        <!-- CV -->
+
+        <div class="character-cv">
+
+          <span class="character-label">
+            CV
+          </span>
+
+          <strong id="characterCv">
+            くるみ
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- PROFILE -->
+
+      <div class="character-profile">
+
+        <span class="character-label">
+          PROFILE
+        </span>
+
+        <p id="characterDescription">
+          子どもっぽい性格。気分で行動する。感情に素直。
+          表情豊かで、好奇心旺盛。不安定な一面も。
+        </p>
+
+      </div>
+
+
+
+      <!-- RELATED WORK -->
+
+      <div class="character-related">
+
+        <span class="character-label">
+          RELATED WORK
+        </span>
+
+        <a
+  id="characterWorkLink"
+  class="character-work-link"
+  href="game.html?game=rabbit"
+>
+
+  <span id="characterWorkLinkText">
+    RAPID RABBIT
+  </span>
+
+  <span>
+    →
+  </span>
+
+</a>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- SCAN -->
+
+    <div
+      id="characterScan"
+      class="character-scan"
+      aria-hidden="true"
+    ></div>
+
+
+  </section>
+
+
+
+  <!-- =======================================================
+       CHARACTER SELECTOR
+  ======================================================== -->
+
+
+  <section class="character-select">
+
+
+    <div class="character-select-header">
+
+      <span>
+        CHARACTERS
+      </span>
+
+      <span>
+
+        <span id="selectedNumber">
+          01
+        </span>
+
+        / 05
+
+      </span>
+
+    </div>
+
+
+
+    <div class="character-selector">
+
+
+      <!-- ===================================================
+           01 らびぃ
+      ==================================================== -->
+
+
+      <button
+        class="character-option is-selected"
+        type="button"
+        data-index="0"
+        aria-label="らびぃを選択"
+      >
+
+        <span class="character-option-number">
+          01
+        </span>
+
+        <div class="character-option-image">
+
+          <img
+            src="images/character/rabby-icon.png"
+            alt="らびぃ"
+          >
+
+        </div>
+
+        <span class="character-option-name">
+          らびぃ
+        </span>
+
+        <span class="character-option-work">
+          RAPID RABBIT
+        </span>
+
+      </button>
+
+
+
+      <!-- ===================================================
+           02 東雅
+      ==================================================== -->
+
+
+      <button
+        class="character-option"
+        type="button"
+        data-index="1"
+        aria-label="東雅を選択"
+      >
+
+        <span class="character-option-number">
+          02
+        </span>
+
+        <div class="character-option-image">
+
+          <img
+            src="images/character/toga-icon.png"
+            alt="東雅"
+          >
+
+        </div>
+
+        <span class="character-option-name">
+          東雅
+        </span>
+
+        <span class="character-option-work">
+          RAPID RABBIT
+        </span>
+
+      </button>
+
+
+
+      <!-- ===================================================
+           03 ナギ
+      ==================================================== -->
+
+
+      <button
+        class="character-option"
+        type="button"
+        data-index="2"
+        aria-label="ナギを選択"
+      >
+
+        <span class="character-option-number">
+          03
+        </span>
+
+        <div class="character-option-image">
+
+          <img
+            src="images/character/nagi-icon.png"
+            alt="ナギ"
+          >
+
+        </div>
+
+        <span class="character-option-name">
+          ナギ
+        </span>
+
+        <span class="character-option-work">
+          ZENNOU
+        </span>
+
+      </button>
+
+
+
+      <!-- ===================================================
+           04 リノ
+      ==================================================== -->
+
+
+      <button
+        class="character-option"
+        type="button"
+        data-index="3"
+        aria-label="リノを選択"
+      >
+
+        <span class="character-option-number">
+          04
+        </span>
+
+        <div class="character-option-image">
+
+          <img
+            src="images/character/rino-icon.png"
+            alt="リノ"
+          >
+
+        </div>
+
+        <span class="character-option-name">
+          リノ
+        </span>
+
+        <span class="character-option-work">
+          ZENNOU
+        </span>
+
+      </button>
+
+
+
+      <!-- ===================================================
+           05 白ナギ
+      ==================================================== -->
+
+
+      <button
+        class="character-option character-option--mystery"
+        type="button"
+        data-index="4"
+        aria-label="白ナギを選択"
+      >
+
+        <span class="character-option-number">
+          05
+        </span>
+
+        <div class="character-option-image">
+
+          <img
+            src="images/character/white-nagi-icon.png"
+            alt="白ナギ"
+          >
+
+        </div>
+
+        <span class="character-option-name">
+          白ナギ
+        </span>
+
+        <span class="character-option-work">
+          ZENNOU
+        </span>
+
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       BOTTOM
+  ======================================================== -->
+
+
+  <div class="character-bottom">
+
+    <span>
+      ← → / SELECT
+    </span>
+
+    <span>
+      HAREIRU CHARACTER DATABASE
+    </span>
+
+    <span>
+      © HAREIRU
+    </span>
+
+  </div>
+
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<div id="footer"></div>
+
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+<script src="character.js"></script>
+
+
+</body>
+
+</html>

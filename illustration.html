@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ILLUSTRATION | HAREIRU</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="illustration.css"
+  >
+
+</head>
+
+
+<body class="illustration-page">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div id="header"></div>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main>
+
+
+  <!-- =======================================================
+       ILLUSTRATION TITLE
+  ======================================================== -->
+
+  <section class="illustration-heading">
+
+    <div class="illustration-heading-top">
+
+      <span class="illustration-kicker">
+        01 / ILLUSTRATION
+      </span>
+
+      <span class="illustration-heading-line"></span>
+
+    </div>
+
+
+    <h1>
+      ILLUSTRATION
+    </h1>
+
+
+    <p class="illustration-description">
+      はれいるが制作したイラスト作品。
+    </p>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       GALLERY
+  ======================================================== -->
+
+  <section
+    class="illustration-gallery"
+    id="illustrationGallery"
+    aria-label="Illustration works"
+  >
+
+    <!--
+      01.png
+      02.png
+      03.png
+      ...
+      最大100枚までJavaScriptで自動表示
+    -->
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
+
+<div
+  class="illustration-lightbox"
+  id="illustrationLightbox"
+  aria-hidden="true"
+>
+
+
+  <!-- BACKDROP -->
+
+  <div
+    class="lightbox-backdrop"
+    id="lightboxBackdrop"
+  ></div>
+
+
+
+  <!-- CLOSE -->
+
+  <button
+    class="lightbox-close"
+    id="lightboxClose"
+    type="button"
+    aria-label="閉じる"
+  >
+    ×
+  </button>
+
+
+
+  <!-- IMAGE -->
+
+  <div class="lightbox-image-wrap">
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div id="footer"></div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+<script src="illustration.js"></script>
+
+
+</body>
+
+</html>

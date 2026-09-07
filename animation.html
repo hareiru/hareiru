@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ANIMATION | HAREIRU</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="animation.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div id="header"></div>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="animation-page">
+
+
+  <!-- =======================================================
+       PAGE HEADING
+  ======================================================== -->
+
+  <section class="animation-heading">
+
+    <div class="section-kicker">
+      01 / ANIMATION
+    </div>
+
+    <h1>
+      ANIMATION
+    </h1>
+
+    <p>
+      映像作品と、その制作の記録。
+    </p>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       ZENNOU
+  ======================================================== -->
+
+  <section
+    class="animation-work"
+    id="zennou"
+  >
+
+    <div class="animation-work-inner">
+
+
+      <!-- VIDEO -->
+
+      <div class="animation-video-area">
+
+        <div class="animation-video-frame">
+
+          <video
+            class="animation-video"
+            src="animation/zennou.mp4"
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+
+
+          <!-- CUSTOM PLAYER -->
+
+          <div class="custom-video-controls">
+
+
+            <button
+              type="button"
+              class="video-play-button"
+              aria-label="再生"
+            >
+              ▶
+            </button>
+
+
+            <span class="video-time">
+              00:00
+            </span>
+
+
+            <input
+              type="range"
+              class="video-progress"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="再生位置"
+            >
+
+
+            <span class="video-duration">
+              00:00
+            </span>
+
+
+            <button
+              type="button"
+              class="video-mute-button"
+              aria-label="ミュート"
+              aria-pressed="true"
+            >
+              🔇
+            </button>
+
+
+            <input
+              type="range"
+              class="video-volume"
+              min="0"
+              max="1"
+              value="1"
+              step="0.01"
+              aria-label="音量"
+            >
+
+
+            <button
+              type="button"
+              class="video-fullscreen-button"
+              aria-label="全画面"
+            >
+              ⛶
+            </button>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="animation-video-label">
+
+          <span>
+            TRAILER
+          </span>
+
+          <span>
+            01
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- STORY -->
+
+      <div class="animation-story">
+
+        <div class="animation-story-header">
+
+          <span class="animation-genre">
+            ANIMATION
+          </span>
+
+          <h2>
+            ZENNOU
+          </h2>
+
+          <div class="animation-year">
+            2026
+          </div>
+
+        </div>
+
+
+        <div class="end-roll-window">
+
+          <div class="end-roll-content">
+
+            <p class="story-label">
+              STORY
+            </p>
+
+            <p>
+              
+「きっと物語の鍵はあたりまえを信じ、あたりまえを疑うことだ」
+<br>
+高機能AI《ZENNOU》が人の選択を代行する時代。<br>
+その裏側で、人を喰らう“バグ”が生まれた。<br>
+希望を背負わされた者と、無力さを感じながら救いたいと願う者。<br>
+人は、他人の幸せなんて理解できるはずがない。<br>
+<br>
+それでも。
+<br>
+それでも、手を伸ばしてしまうのはなぜだろう。
+            </p>
+
+
+            <div class="story-space"></div>
+
+
+            <p class="story-label">
+              ABOUT THE WORK
+            </p>
+
+            <p>
+              自主制作によるアニメーション作品。
+              企画・制作を通して、
+              映像表現や3DCGを組み合わせながら制作しました。
+            </p>
+
+
+            <div class="story-space"></div>
+
+
+            <p class="story-credit">
+              HAREIRU
+            </p>
+
+            <p class="story-credit">
+              ORIGINAL WORK
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <a
+          href="https://www.youtube.com/watch?v=W_0cvZYq8lo"
+          class="watch-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <span>
+            WATCH FULL MOVIE
+          </span>
+
+          <span>
+            ▶
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       ZENNOU FILM STILL
+  ======================================================== -->
+
+  <section class="film-still-section">
+
+
+    <div class="film-still-heading">
+
+      <div>
+
+        <span class="section-kicker">
+          FILM STILL
+        </span>
+
+        <h2>
+          ZENNOU
+        </h2>
+
+      </div>
+
+
+      <span
+        class="film-still-count"
+        id="zennouStillCount"
+      >
+        01 / 05
+      </span>
+
+    </div>
+
+
+
+    <div class="film-still-slider">
+
+
+      <button
+        type="button"
+        class="still-arrow still-arrow--left"
+        aria-label="Previous still"
+      >
+        ←
+      </button>
+
+
+      <div class="still-viewport">
+
+        <div class="still-track">
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/zennou/01.png"
+              alt="ZENNOU film still 01"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/zennou/02.png"
+              alt="ZENNOU film still 02"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/zennou/03.png"
+              alt="ZENNOU film still 03"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/zennou/04.png"
+              alt="ZENNOU film still 04"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/zennou/05.png"
+              alt="ZENNOU film still 05"
+              loading="lazy"
+            >
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="still-arrow still-arrow--right"
+        aria-label="Next still"
+      >
+        →
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       NEW WORK
+  ======================================================== -->
+
+  <section
+    class="animation-work animation-work--new"
+    id="new-work"
+  >
+
+    <div class="animation-work-inner">
+
+
+      <!-- VIDEO -->
+
+      <div class="animation-video-area">
+
+        <div class="animation-video-frame">
+
+          <video
+            class="animation-video"
+            src="animation/new.mp4"
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+
+
+          <!-- CUSTOM PLAYER -->
+
+          <div class="custom-video-controls">
+
+
+            <button
+              type="button"
+              class="video-play-button"
+              aria-label="再生"
+            >
+              ▶
+            </button>
+
+
+            <span class="video-time">
+              00:00
+            </span>
+
+
+            <input
+              type="range"
+              class="video-progress"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="再生位置"
+            >
+
+
+            <span class="video-duration">
+              00:00
+            </span>
+
+
+            <button
+              type="button"
+              class="video-mute-button"
+              aria-label="ミュート"
+              aria-pressed="true"
+            >
+              🔇
+            </button>
+
+
+            <input
+              type="range"
+              class="video-volume"
+              min="0"
+              max="1"
+              value="1"
+              step="0.01"
+              aria-label="音量"
+            >
+
+
+            <button
+              type="button"
+              class="video-fullscreen-button"
+              aria-label="全画面"
+            >
+              ⛶
+            </button>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="animation-video-label">
+
+          <span>
+            TRAILER
+          </span>
+
+          <span>
+            02
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- STORY -->
+
+      <div class="animation-story">
+
+        <div class="animation-story-header">
+
+          <span class="animation-genre">
+            ANIMATION
+          </span>
+
+          <h2>
+            NEW WORK
+          </h2>
+
+          <div class="animation-year">
+            2027
+          </div>
+
+        </div>
+
+
+        <div class="end-roll-window">
+
+          <div class="end-roll-content">
+
+            <p class="story-label">
+              STORY
+            </p>
+
+            <p>
+              現在制作中の新作アニメーション。
+              詳細は今後公開予定です。
+            </p>
+
+
+            <div class="story-space"></div>
+
+
+            <p class="story-label">
+              ABOUT THE WORK
+            </p>
+
+            <p>
+              新しい表現を試しながら、
+              少しずつ制作を進めています。
+            </p>
+
+
+            <div class="story-space"></div>
+
+
+            <p class="story-credit">
+              HAREIRU
+            </p>
+
+            <p class="story-credit">
+              WORK IN PROGRESS
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="coming-soon-button">
+
+          <span>
+            COMING SOON
+          </span>
+
+          <span>
+            ...
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =======================================================
+       NEW WORK FILM STILL
+  ======================================================== -->
+
+  <section class="film-still-section">
+
+
+    <div class="film-still-heading">
+
+      <div>
+
+        <span class="section-kicker">
+          FILM STILL
+        </span>
+
+        <h2>
+          NEW WORK
+        </h2>
+
+      </div>
+
+
+      <span
+        class="film-still-count"
+        id="newStillCount"
+      >
+        01 / 05
+      </span>
+
+    </div>
+
+
+
+    <div class="film-still-slider">
+
+
+      <button
+        type="button"
+        class="still-arrow still-arrow--left"
+        aria-label="Previous still"
+      >
+        ←
+      </button>
+
+
+      <div class="still-viewport">
+
+        <div class="still-track">
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/new/01.png"
+              alt="NEW WORK film still 01"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/new/02.png"
+              alt="NEW WORK film still 02"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/new/03.png"
+              alt="NEW WORK film still 03"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/new/04.png"
+              alt="NEW WORK film still 04"
+              loading="lazy"
+            >
+          </button>
+
+
+          <button
+            type="button"
+            class="still-item"
+          >
+            <img
+              src="images/animation/new/05.png"
+              alt="NEW WORK film still 05"
+              loading="lazy"
+            >
+          </button>
+
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="still-arrow still-arrow--right"
+        aria-label="Next still"
+      >
+        →
+      </button>
+
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div id="footer"></div>
+<script src="script.js"></script>
+<script src="animation.js"></script>
+
+</body>
+
+</html>

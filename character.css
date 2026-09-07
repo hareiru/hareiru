@@ -1,0 +1,1313 @@
+/* =========================================================
+   HAREIRU
+   CHARACTER PAGE
+========================================================= */
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.character-page {
+  background: #090909;
+  color: #f1eee8;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.character-main {
+  position: relative;
+
+  min-height: calc(100vh - 80px);
+
+  padding:
+    120px 5vw 50px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.045),
+      transparent 35%
+    ),
+    #090909;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.character-grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: .12;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   NOISE
+========================================================= */
+
+.character-noise {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: .035;
+
+  background-image:
+    repeating-radial-gradient(
+      circle at 0 0,
+      #fff 0,
+      #fff 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  background-size: 5px 5px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.character-heading {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1400px;
+
+  margin:
+    0 auto 60px;
+
+  text-align: center;
+}
+
+.character-kicker {
+  margin:
+    0 0 15px;
+
+  color: #999;
+
+  font:
+    500 10px/1.5
+    "Montserrat",
+    "Noto Sans JP",
+    sans-serif;
+
+  letter-spacing: .22em;
+}
+
+.character-heading h1 {
+  margin: 0;
+
+  font:
+    800 clamp(42px, 6vw, 78px)/.9
+    "Montserrat",
+    "Noto Sans JP",
+    sans-serif;
+
+  letter-spacing: .08em;
+}
+
+.character-heading-line {
+  width: 70px;
+
+  height: 2px;
+
+  margin:
+    25px auto 20px;
+
+  background: #d92323;
+}
+
+.character-select-title {
+  margin: 0;
+
+  color: #d92323;
+
+  font:
+    700 13px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .25em;
+}
+
+
+/* =========================================================
+   CHARACTER DISPLAY
+========================================================= */
+
+.character-display {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1250px;
+
+  min-height: 560px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(350px, 1.1fr)
+    minmax(320px, .9fr);
+
+  gap: 70px;
+
+  align-items: center;
+
+  padding:
+    45px 50px;
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.12);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.025),
+      transparent 50%
+    );
+}
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+.character-data-top {
+  position: absolute;
+
+  top: 16px;
+
+  left: 50px;
+  right: 50px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #666;
+
+  font:
+    500 9px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .14em;
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.character-visual {
+  position: relative;
+
+  height: 500px;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.character-visual-frame {
+  position: relative;
+
+  width: min(100%, 430px);
+
+  height: 500px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255,255,255,.07),
+      transparent 55%
+    );
+}
+
+
+/* =========================================================
+   CORNERS
+========================================================= */
+
+.character-corner {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 25px;
+
+  height: 25px;
+
+  border-color:
+    rgba(255,255,255,.7);
+
+  border-style: solid;
+}
+
+.character-corner--tl {
+  top: 15px;
+  left: 15px;
+
+  border-width:
+    1px 0 0 1px;
+}
+
+.character-corner--tr {
+  top: 15px;
+  right: 15px;
+
+  border-width:
+    1px 1px 0 0;
+}
+
+.character-corner--bl {
+  bottom: 15px;
+  left: 15px;
+
+  border-width:
+    0 0 1px 1px;
+}
+
+.character-corner--br {
+  right: 15px;
+  bottom: 15px;
+
+  border-width:
+    0 1px 1px 0;
+}
+
+
+/* =========================================================
+   MAIN CHARACTER IMAGE
+========================================================= */
+
+.character-image-wrap {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position:
+    center bottom;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 15px 30px rgba(0,0,0,.45)
+    );
+
+  transition:
+    opacity .25s ease,
+    transform .5s cubic-bezier(.2,.8,.2,1),
+    filter .3s ease;
+}
+
+.character-image.is-changing {
+  opacity: 0;
+
+  transform:
+    translateX(-35px)
+    scale(.98);
+
+  filter:
+    blur(4px);
+}
+
+.character-image.is-entering {
+  animation:
+    characterEnter
+    .65s
+    cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes characterEnter {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(35px)
+      scale(.97);
+
+    filter:
+      brightness(1.8)
+      blur(5px)
+      drop-shadow(
+        0 15px 30px rgba(0,0,0,.45)
+      );
+  }
+
+  55% {
+    opacity: 1;
+
+    transform:
+      translateX(-5px)
+      scale(1.01);
+
+    filter:
+      brightness(1)
+      blur(0)
+      drop-shadow(
+        0 15px 30px rgba(0,0,0,.45)
+      );
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+
+    filter:
+      brightness(1)
+      blur(0)
+      drop-shadow(
+        0 15px 30px rgba(0,0,0,.45)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.character-image-number {
+  position: absolute;
+
+  right: 25px;
+  bottom: 20px;
+
+  color:
+    rgba(255,255,255,.2);
+
+  font:
+    800 46px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: -.04em;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.character-info {
+  position: relative;
+
+  padding: 20px 0;
+}
+
+.character-work {
+  margin:
+    0 0 12px;
+
+  color: #d92323;
+
+  font:
+    700 12px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .2em;
+}
+
+.character-name {
+  margin: 0;
+
+  font:
+    900 clamp(42px, 5vw, 72px)/1
+    "Noto Sans JP",
+    sans-serif;
+
+  letter-spacing: .04em;
+}
+
+.character-info-line {
+  width: 55px;
+
+  height: 2px;
+
+  margin:
+    28px 0;
+
+  background: #f1eee8;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.character-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #666;
+
+  font:
+    600 9px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .18em;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.character-quote {
+  margin:
+    0 0 28px;
+
+  padding-left: 18px;
+
+  border-left:
+    2px solid #b40000;
+}
+
+.character-quote p {
+  margin: 0;
+
+  color: #f1eee8;
+
+  font:
+    500 17px/1.7
+    "Noto Sans JP",
+    sans-serif;
+
+  letter-spacing: .04em;
+}
+
+
+/* =========================================================
+   AFFILIATION / CV
+========================================================= */
+
+.character-meta-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  column-gap: 50px;
+
+  align-items: start;
+
+  margin-bottom: 28px;
+}
+
+.character-affiliation,
+.character-cv {
+  min-width: 0;
+}
+
+.character-affiliation strong,
+.character-cv strong {
+  display: block;
+
+  margin: 0;
+
+  color: #f1eee8;
+
+  font:
+    700 17px/1.5
+    "Noto Sans JP",
+    sans-serif;
+
+  letter-spacing: .04em;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.character-profile {
+  max-width: 460px;
+
+  margin-bottom: 32px;
+}
+
+.character-profile p {
+  margin: 0;
+
+  color: #c7c4be;
+
+  font:
+    400 14px/2
+    "Noto Sans JP",
+    sans-serif;
+
+  letter-spacing: .04em;
+}
+
+
+/* =========================================================
+   RELATED WORK
+========================================================= */
+
+.character-related {
+  max-width: 460px;
+}
+
+.character-work-link {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 15px 0;
+
+  color: #f1eee8;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.2);
+
+  font:
+    700 11px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .14em;
+
+  transition:
+    color .25s ease,
+    border-color .25s ease,
+    padding .25s ease;
+}
+
+.character-work-link span {
+  font-size: 18px;
+
+  transition:
+    transform .25s ease;
+}
+
+.character-work-link:hover {
+  color: #d92323;
+
+  border-color: #d92323;
+
+  padding-left: 8px;
+}
+
+.character-work-link:hover span {
+  transform:
+    translateX(6px);
+}
+
+
+/* =========================================================
+   SCAN
+========================================================= */
+
+.character-scan {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 0;
+
+  height: 2px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.8),
+      #d92323,
+      rgba(255,255,255,.8),
+      transparent
+    );
+
+  box-shadow:
+    0 0 20px rgba(217,35,35,.5);
+}
+
+.character-scan.is-active {
+  animation:
+    characterScan
+    .65s
+    ease;
+}
+
+@keyframes characterScan {
+
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   SELECTOR
+========================================================= */
+
+.character-select {
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 1250px;
+
+  margin:
+    55px auto 0;
+}
+
+
+/* =========================================================
+   SELECT HEADER
+========================================================= */
+
+.character-select-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  color: #777;
+
+  font:
+    600 10px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .18em;
+}
+
+.character-select-header
+span:nth-child(2) {
+  color: #d92323;
+}
+
+
+/* =========================================================
+   SELECTOR GRID
+========================================================= */
+
+.character-selector {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   OPTION
+========================================================= */
+
+.character-option {
+  position: relative;
+
+  min-width: 0;
+
+  padding:
+    0 0 16px;
+
+  color: #f1eee8;
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  background:
+    rgba(255,255,255,.015);
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+.character-option:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(255,255,255,.35);
+
+  background:
+    rgba(255,255,255,.04);
+}
+
+.character-option.is-selected {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    #d92323;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(217,35,35,.12),
+      rgba(217,35,35,.025)
+    );
+
+  box-shadow:
+    0 0 25px
+    rgba(217,35,35,.12);
+}
+
+
+/* =========================================================
+   SELECTED LABEL
+========================================================= */
+
+.character-option.is-selected::before {
+  content: "SELECTED";
+
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  z-index: 5;
+
+  padding:
+    5px 6px;
+
+  color: #fff;
+
+  background: #d92323;
+
+  font:
+    700 7px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.character-option-number {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  z-index: 4;
+
+  color:
+    rgba(255,255,255,.35);
+
+  font:
+    700 9px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================================================
+   ICON IMAGE
+========================================================= */
+
+.character-option-image {
+  height: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(255,255,255,.055),
+      transparent 68%
+    );
+}
+
+.character-option-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+
+  opacity: .42;
+
+  filter:
+    grayscale(1)
+    brightness(.7);
+
+  transform:
+    scale(.94);
+
+  transition:
+    opacity .3s ease,
+    filter .3s ease,
+    transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.character-option:hover
+.character-option-image img {
+  opacity: .8;
+
+  filter:
+    grayscale(.2)
+    brightness(1);
+
+  transform:
+    scale(1);
+}
+
+.character-option.is-selected
+.character-option-image img {
+  opacity: 1;
+
+  filter:
+    grayscale(0)
+    brightness(1);
+
+  transform:
+    scale(1.04);
+}
+
+
+/* =========================================================
+   OPTION TEXT
+========================================================= */
+
+.character-option-name {
+  display: block;
+
+  margin:
+    12px 12px 5px;
+
+  font:
+    800 14px/1
+    "Noto Sans JP",
+    sans-serif;
+}
+
+.character-option-work {
+  display: block;
+
+  margin:
+    0 12px;
+
+  color: #777;
+
+  font:
+    600 8px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .12em;
+}
+
+.character-option.is-selected
+.character-option-work {
+  color: #d92323;
+}
+
+
+/* =========================================================
+   MYSTERY
+========================================================= */
+
+.character-option--mystery
+.character-option-image img {
+  filter:
+    grayscale(1)
+    brightness(.55);
+}
+
+.character-option--mystery:hover
+.character-option-image img {
+  filter:
+    grayscale(.5)
+    brightness(.8);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.character-bottom {
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 1250px;
+
+  margin:
+    45px auto 0;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #555;
+
+  font:
+    500 8px/1
+    "Montserrat",
+    sans-serif;
+
+  letter-spacing: .15em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .character-main {
+    padding-top: 100px;
+  }
+
+  .character-display {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 40px;
+
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .character-data-top {
+    left: 30px;
+    right: 30px;
+  }
+
+  .character-visual,
+  .character-visual-frame {
+    height: 440px;
+  }
+
+  .character-option-image {
+    height: 145px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .character-main {
+    padding:
+      90px 20px 40px;
+  }
+
+  .character-heading {
+    margin-bottom: 45px;
+  }
+
+  .character-display {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    padding:
+      55px 20px 35px;
+  }
+
+  .character-visual {
+    height: 480px;
+  }
+
+  .character-visual-frame {
+    width: min(100%, 400px);
+
+    height: 480px;
+  }
+
+  .character-info {
+    text-align: center;
+  }
+
+  .character-info-line {
+    margin:
+      25px auto;
+  }
+
+  .character-quote {
+    text-align: left;
+  }
+
+  .character-meta-row {
+    max-width: 460px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .character-profile,
+  .character-related {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .character-selector {
+    grid-template-columns:
+      repeat(5, minmax(110px, 1fr));
+
+    overflow-x: auto;
+
+    padding-bottom: 12px;
+  }
+
+  .character-option {
+    min-width: 110px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .character-main {
+    padding:
+      80px 15px 35px;
+  }
+
+  .character-kicker {
+    font-size: 8px;
+  }
+
+  .character-heading h1 {
+    font-size: 42px;
+  }
+
+  .character-select-title {
+    font-size: 10px;
+  }
+
+  .character-display {
+    min-height: auto;
+
+    padding:
+      50px 15px 30px;
+  }
+
+  .character-data-top {
+    left: 15px;
+    right: 15px;
+
+    font-size: 7px;
+  }
+
+  .character-visual {
+    height: 390px;
+  }
+
+  .character-visual-frame {
+    height: 390px;
+  }
+
+  .character-name {
+    font-size: 48px;
+  }
+
+  .character-quote p {
+    font-size: 15px;
+  }
+
+  .character-meta-row {
+    grid-template-columns:
+      1fr 1fr;
+
+    column-gap: 25px;
+  }
+
+  .character-affiliation strong,
+  .character-cv strong {
+    font-size: 15px;
+  }
+
+  .character-profile p {
+    font-size: 13px;
+
+    line-height: 1.9;
+  }
+
+  .character-option-image {
+    height: 125px;
+  }
+
+  .character-option-name {
+    font-size: 12px;
+  }
+
+  .character-option-work {
+    font-size: 7px;
+  }
+
+  .character-bottom {
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    font-size: 7px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .character-image,
+  .character-option,
+  .character-option-image img,
+  .character-work-link,
+  .character-work-link span {
+    transition: none;
+  }
+
+  .character-image.is-entering,
+  .character-scan.is-active {
+    animation: none;
+  }
+
+}

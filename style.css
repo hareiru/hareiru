@@ -1,0 +1,2578 @@
+/* =========================================================
+   HAREIRU HOME
+========================================================= */
+
+
+:root {
+
+  --black: #080707;
+  --black-soft: #11100f;
+
+  --red-dark: #6E151C;
+  --red: #A6262F;
+  --red-bright: #c73a44;
+
+  --white: #F1EEE8;
+  --gray: #8A8580;
+
+  --line: rgba(241, 238, 232, .18);
+
+  --header-height: 76px;
+
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin: 0;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  font-family:
+    "Noto Sans JP",
+    sans-serif;
+
+  overflow-x: hidden;
+
+}
+
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+
+button {
+
+  font: inherit;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+
+.site-header {
+
+  position: fixed;
+
+  z-index: 100;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: var(--header-height);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding:
+    0 4vw;
+
+  background:
+    rgba(8, 7, 7, .92);
+
+  border-bottom:
+    1px solid var(--line);
+
+  backdrop-filter:
+    blur(12px);
+
+}
+
+
+.logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 0 0 auto;
+
+}
+
+
+.logo-mark {
+
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid var(--white);
+
+  font:
+    800 15px/1 "Montserrat",
+    sans-serif;
+
+  transform:
+    rotate(-8deg);
+
+}
+
+
+.logo-text {
+
+  font:
+    800 16px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .16em;
+
+}
+
+
+.global-nav {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap:
+    clamp(12px, 2vw, 30px);
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+
+}
+
+
+.global-nav::-webkit-scrollbar {
+  display: none;
+}
+
+
+.global-nav a {
+
+  position: relative;
+
+  white-space: nowrap;
+
+  color: #b7b2ac;
+
+  font:
+    700 11px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .12em;
+
+  padding:
+    10px 0;
+
+  transition:
+    color .25s ease;
+
+}
+
+
+.global-nav a::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 2px;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    var(--red);
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    right;
+
+  transition:
+    transform .25s ease;
+
+}
+
+
+.global-nav a:hover,
+.global-nav a.active {
+
+  color:
+    var(--white);
+
+}
+
+
+.global-nav a:hover::after,
+.global-nav a.active::after {
+
+  transform:
+    scaleX(1);
+
+  transform-origin:
+    left;
+
+}
+
+
+/* =========================================================
+   PICKUP
+========================================================= */
+
+
+.pickup {
+
+  position: relative;
+
+  min-height: 100vh;
+
+  padding-top:
+    var(--header-height);
+
+  background:
+    var(--black);
+
+}
+
+
+.pickup-inner {
+
+  position: relative;
+
+  max-width:
+    none;
+
+  width:
+    100%;
+
+  margin:
+    0;
+
+  padding:
+    10px 5vw 40px;
+
+  background:
+    #880000;
+
+}
+
+
+.section-kicker {
+
+  color:
+    var(--red-bright);
+
+  font:
+    700 10px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .3em;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.pickup h1,
+.genre-heading h2 {
+
+  margin: 12px 0 0;
+
+  font:
+    800 clamp(42px, 6vw, 76px)/.95 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    -.045em;
+
+}
+
+
+#pickup-title {
+
+  position: relative;
+
+  transform:
+    translateX(30px);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+}
+
+
+#pickup-title img {
+
+  width:
+    100px;
+
+  height:
+    100px;
+
+  object-fit:
+    contain;
+
+  flex:
+    0 0 auto;
+
+}
+
+
+/* =========================================================
+   FILM STRIP
+========================================================= */
+
+
+.film-strip {
+
+  position: relative;
+
+  width: 100%;
+
+  height:
+    78px;
+
+  overflow:
+    hidden;
+
+  background:
+    #080707;
+
+  border-top:
+    1px solid rgba(241, 238, 232, .15);
+
+  border-bottom:
+    1px solid rgba(241, 238, 232, .15);
+
+}
+
+
+.film-strip::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 50%;
+
+  height:
+    62px;
+
+  transform:
+    translateY(-50%);
+
+  background:
+    #080707;
+
+}
+
+
+.film-holes {
+
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+  top: 50%;
+
+  height:
+    34px;
+
+  transform:
+    translateY(-50%);
+
+  display:
+    flex;
+
+  align-items: center;
+
+  gap:
+    18px;
+
+  width:
+    max-content;
+
+  padding:
+    0 10px;
+
+}
+
+
+.film-holes span {
+
+  flex:
+    0 0 66px;
+
+  width:
+    66px;
+
+  height:
+    27px;
+
+  background:
+    #F1EEE8;
+
+  border-radius:
+    7px;
+
+}
+
+
+.film-strip--top {
+
+  margin-top:
+    0;
+
+}
+
+
+.film-strip--bottom {
+
+  margin-top:
+    0;
+
+}
+
+
+/* =========================================================
+   POSTER STAGE
+========================================================= */
+
+
+.poster-stage {
+
+  position: relative;
+
+  height:
+    min(65vh, 660px);
+
+  min-height:
+    600px;
+
+  margin-top:
+    0px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    visible;
+
+}
+
+
+.poster-track {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    clamp(14px, 3vw, 48px);
+
+  overflow:
+    visible;
+
+  transition:
+    transform .65s cubic-bezier(.2, .8, .2, 1);
+
+}
+
+
+.poster-slide {
+
+  position:
+    relative;
+
+  width:
+    clamp(245px, 22vw, 340px);
+
+  flex:
+    0 0 clamp(245px, 22vw, 340px);
+
+  opacity:
+    .32;
+
+  transform:
+    scale(.78);
+
+  transition:
+
+    opacity .55s ease,
+
+    transform .65s
+      cubic-bezier(.2, .8, .2, 1),
+
+    filter .55s ease;
+
+  filter:
+    brightness(.48)
+    saturate(.65);
+
+  overflow:
+    visible;
+
+}
+
+
+.poster-slide.is-center {
+
+  opacity:
+    1;
+
+  transform:
+    scale(1);
+
+  filter:
+    brightness(1)
+    saturate(1);
+
+  z-index:
+    4;
+
+}
+
+
+/* =========================================================
+   POSTER META
+========================================================= */
+
+
+.poster-meta {
+
+  height:
+    52px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    flex-end;
+
+  gap:
+    6px;
+
+  margin-bottom:
+    10px;
+
+}
+
+
+.poster-meta span {
+
+  color:
+    var(--red-bright);
+
+  font:
+    700 17px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .2em;
+
+}
+
+
+.poster-meta strong {
+
+  font:
+    800 29px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .04em;
+
+}
+
+
+/* =========================================================
+   POSTER BUTTON
+========================================================= */
+
+
+.poster-button {
+
+  position:
+    relative;
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  padding:
+    0;
+
+  border:
+    0;
+
+  background:
+    transparent;
+
+  color:
+    inherit;
+
+  cursor:
+    pointer;
+
+  overflow:
+    visible;
+
+}
+
+
+/* =========================================================
+   POSTER ART
+========================================================= */
+
+
+.poster-art {
+
+  position:
+    relative;
+
+  aspect-ratio:
+    2 / 3;
+
+  overflow:
+    visible;
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  padding:
+    20px;
+
+  border:
+    12px solid #080707;
+
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, .5);
+
+  isolation:
+    isolate;
+
+}
+
+
+/* =========================================================
+   POSTER IMAGE
+========================================================= */
+
+
+.poster-image {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  z-index:
+    -3;
+
+}
+
+
+/* =========================================================
+   POSTER OVERLAY
+========================================================= */
+
+
+.poster-art::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset:
+    0;
+
+  z-index:
+    -2;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.16),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      180deg,
+      transparent 45%,
+      rgba(0,0,0,.78)
+    );
+
+}
+
+
+.poster-art::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset:
+    7px;
+
+  border:
+    1px solid rgba(241, 238, 232, .2);
+
+  z-index:
+    -1;
+
+}
+
+
+/* =========================================================
+   POSTER DESIGNS
+========================================================= */
+
+
+.poster-art--zennou {
+
+  background:
+
+    radial-gradient(
+      circle at 68% 32%,
+      rgba(241,238,232,.7) 0 5%,
+      transparent 6%
+    ),
+
+    linear-gradient(
+      150deg,
+      #291b1c 0 35%,
+      #090707 36% 100%
+    );
+
+}
+
+
+.poster-art--lanedy {
+
+  background:
+
+    radial-gradient(
+      circle at 28% 30%,
+      rgba(241,238,232,.55) 0 8%,
+      transparent 9%
+    ),
+
+    linear-gradient(
+      155deg,
+      #7d2028 0 42%,
+      #1b0b0d 43% 100%
+    );
+
+}
+
+
+.poster-art--illustration {
+
+  background:
+
+    radial-gradient(
+      circle at 55% 34%,
+      rgba(241,238,232,.8) 0 7%,
+      transparent 8%
+    ),
+
+    linear-gradient(
+      145deg,
+      #4d3032 0 30%,
+      #0b0808 31% 100%
+    );
+
+}
+
+
+.poster-art--rabbit {
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(241,238,232,.14),
+      transparent 32%
+    ),
+
+    linear-gradient(
+      145deg,
+      #321015 0 48%,
+      #080707 49% 100%
+    );
+
+}
+
+
+/* =========================================================
+   POSTER TEXT
+========================================================= */
+
+
+.poster-no {
+
+  position:
+    absolute;
+
+  top:
+    19px;
+
+  left:
+    20px;
+
+  font:
+    700 17px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .14em;
+
+}
+
+
+.poster-label {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  font:
+    800 clamp(25px, 3.2vw, 42px)/.9 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    -.04em;
+
+}
+
+
+/* =========================================================
+   POSTER CHARACTER
+========================================================= */
+
+
+.poster-character {
+
+  position:
+    absolute;
+
+  z-index:
+    30;
+
+  display:
+    none;
+
+  place-items:
+    center;
+
+  width:
+    110px;
+
+  height:
+    145px;
+
+  object-fit:
+    contain;
+
+  border:
+    1px solid rgba(241,238,232,.7);
+
+  background:
+    rgba(241,238,232,.08);
+
+  color:
+    var(--white);
+
+  font:
+    700 52px/1 "Noto Sans JP",
+    sans-serif;
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+  transform:
+    translate3d(0, 0, 0)
+    rotate(0deg)
+    scale(.35);
+
+  transform-origin:
+    center center;
+
+  pointer-events:
+    none;
+
+  will-change:
+    transform,
+    opacity;
+
+}
+
+
+/* =========================================================
+   CHARACTER SIZE
+========================================================= */
+
+
+.poster-character--large {
+
+  width:
+    125px;
+
+  height:
+    165px;
+
+  font-size:
+    60px;
+
+}
+
+
+.poster-character--medium {
+
+  width:
+    100px;
+
+  height:
+    135px;
+
+  font-size:
+    48px;
+
+}
+
+
+.poster-character--small {
+
+  width:
+    76px;
+
+  height:
+    104px;
+
+  font-size:
+    38px;
+
+}
+
+
+/* =========================================================
+   CHARACTER START POSITION
+========================================================= */
+
+
+.poster-character--one {
+
+  left:
+    12%;
+
+  top:
+    18%;
+
+}
+
+
+.poster-character--two {
+
+  right:
+    8%;
+
+  top:
+    30%;
+
+}
+
+
+.poster-character--three {
+
+  left:
+    8%;
+
+  top:
+    54%;
+
+}
+
+
+.poster-character--four {
+
+  right:
+    10%;
+
+  top:
+    58%;
+
+}
+
+
+.poster-character--five {
+
+  left:
+    38%;
+
+  top:
+    68%;
+
+}
+
+
+/* =========================================================
+   CHARACTER POP
+========================================================= */
+
+
+.poster-character.pop-start {
+
+  animation:
+    characterPop
+    .72s
+    cubic-bezier(.18, 1.25, .3, 1)
+    forwards;
+
+}
+
+
+.poster-slide:not(.is-center) .poster-character {
+
+  opacity:
+    0;
+
+  visibility:
+    hidden;
+
+}
+
+
+/* =========================================================
+   CHARACTER POP ANIMATION
+========================================================= */
+
+
+@keyframes characterPop {
+
+  0% {
+
+    opacity:
+      0;
+
+    visibility:
+      hidden;
+
+    transform:
+      translate3d(0, 35px, 0)
+      rotate(0deg)
+      scale(.35);
+
+  }
+
+
+  20% {
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    transform:
+      translate3d(
+        calc(var(--pop-x) * .22),
+        calc(var(--pop-y) * .22),
+        0
+      )
+      rotate(
+        calc(var(--pop-rotate) * .25)
+      )
+      scale(.72);
+
+  }
+
+
+  55% {
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    transform:
+      translate3d(
+        calc(var(--pop-x) * 1.08),
+        calc(var(--pop-y) * 1.08),
+        0
+      )
+      rotate(
+        calc(var(--pop-rotate) * 1.12)
+      )
+      scale(1.14);
+
+  }
+
+
+  78% {
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    transform:
+      translate3d(
+        calc(var(--pop-x) * .94),
+        calc(var(--pop-y) * .94),
+        0
+      )
+      rotate(
+        calc(var(--pop-rotate) * .94)
+      )
+      scale(1.04);
+
+  }
+
+
+  100% {
+
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    transform:
+      translate3d(
+        var(--pop-x),
+        var(--pop-y),
+        0
+      )
+      rotate(
+        var(--pop-rotate)
+      )
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   SHOWING STATE
+========================================================= */
+
+
+.showing-state {
+
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  justify-content:
+    space-between;
+
+  gap:
+    8px;
+
+  margin-top:
+    12px;
+
+}
+
+
+.showing-state span {
+
+  font:
+    800 17px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .13em;
+
+}
+
+
+.showing-state small {
+
+  color:
+    var(--gray);
+
+  font:
+    500 13px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .08em;
+
+}
+
+
+/* =========================================================
+   CAROUSEL ARROWS
+========================================================= */
+
+
+.carousel-arrow {
+
+  position:
+    absolute;
+
+  z-index:
+    50;
+
+  top:
+    50%;
+
+  width:
+    50px;
+
+  height:
+    50px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid rgba(241,238,232,.38);
+
+  background:
+    rgba(8,7,7,.75);
+
+  color:
+    var(--white);
+
+  cursor:
+    pointer;
+
+  transform:
+    translateY(-50%);
+
+  transition:
+
+    background .25s ease,
+
+    border-color .25s ease,
+
+    transform .25s ease;
+
+}
+
+
+.carousel-arrow:hover {
+
+  background:
+    var(--red-dark);
+
+  border-color:
+    var(--red);
+
+}
+
+
+.carousel-arrow--left {
+
+  left:
+    2%;
+
+}
+
+
+.carousel-arrow--right {
+
+  right:
+    2%;
+
+}
+
+
+/* =========================================================
+   TICKET LINE
+========================================================= */
+
+
+.ticket-line {
+
+  margin-top:
+    18px;
+
+  padding-top:
+    13px;
+
+  border-top:
+    1px solid var(--line);
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  gap:
+    16px;
+
+  color:
+    var(--gray);
+
+  font:
+    600 8px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .14em;
+
+}
+
+
+/* =========================================================
+   GENRE
+========================================================= */
+
+
+.genre-nav {
+
+  position:
+    relative;
+
+  min-height:
+    720px;
+
+  padding:
+    125px 5vw 110px;
+
+  border-top:
+    1px solid var(--line);
+
+  background:
+    var(--black-soft);
+
+}
+
+
+.genre-heading {
+
+  max-width:
+    1500px;
+
+  margin:
+    0 auto;
+
+  text-align:
+    center;
+
+}
+
+
+.genre-heading p {
+
+  margin:
+    14px 0 0;
+
+  color:
+    var(--gray);
+
+  font-size:
+    12px;
+
+  letter-spacing:
+    .15em;
+
+}
+
+
+.genre-models {
+
+  max-width:
+    1120px;
+
+  margin:
+    65px auto 0;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    5vw;
+
+}
+
+
+.model-item {
+
+  min-width:
+    0;
+
+  display:
+    block;
+
+  color:
+    var(--white);
+
+  text-align:
+    center;
+
+  cursor:
+    pointer;
+
+}
+
+
+/* =========================================================
+   GENRE ICON SCENE
+========================================================= */
+
+
+.model-scene {
+
+  position:
+    relative;
+
+  height:
+    300px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  overflow:
+    visible;
+
+  cursor:
+    pointer;
+
+}
+
+
+/* =========================================================
+   GENRE UNDERLINE
+========================================================= */
+
+
+.model-scene::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  bottom:
+    30px;
+
+  width:
+    150px;
+
+  height:
+    1px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(241,238,232,.22);
+
+  transition:
+    width .35s ease,
+    background .35s ease;
+
+}
+
+
+.model-item:hover
+.model-scene::after {
+
+  width:
+    190px;
+
+  background:
+    var(--red);
+
+}
+
+
+/* =========================================================
+   GENRE ICON
+========================================================= */
+
+
+.genre-icon {
+
+  width:
+    180px;
+
+  height:
+    180px;
+
+  display:
+    block;
+
+  object-fit:
+    contain;
+
+  transition:
+    transform .25s ease,
+    filter .25s ease;
+
+  will-change:
+    transform;
+
+}
+
+
+/* =========================================================
+   GENRE ICON HOVER
+========================================================= */
+
+
+.model-item:hover
+.genre-icon {
+
+  transform:
+    scale(1.08);
+
+  filter:
+    brightness(1.08);
+
+}
+
+
+/* =========================================================
+   GENRE ICON SPIN
+========================================================= */
+
+
+.genre-icon.spin-on-leave {
+
+  animation:
+    genreIconSpin
+    .65s
+    cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+@keyframes genreIconSpin {
+
+  0% {
+
+    transform:
+      rotate(0deg)
+      scale(1.08);
+
+  }
+
+
+  70% {
+
+    transform:
+      rotate(330deg)
+      scale(1.04);
+
+  }
+
+
+  100% {
+
+    transform:
+      rotate(360deg)
+      scale(1);
+
+  }
+
+}
+
+
+/* =========================================================
+   MODEL LABEL
+========================================================= */
+
+
+.model-label {
+
+  margin-top:
+    13px;
+
+  font:
+    800 15px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .13em;
+
+}
+
+
+/* =========================================================
+   ABOUT / COMMISSION
+========================================================= */
+
+
+.home-link-section {
+
+  position:
+    relative;
+
+  max-width:
+    1500px;
+
+  min-height:
+    480px;
+
+  margin:
+    0 auto;
+
+  padding:
+    120px 7vw;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    60px;
+
+  border-top:
+    1px solid var(--line);
+
+}
+
+
+/* =========================================================
+   ABOUT COPY
+========================================================= */
+
+
+.home-link-copy {
+
+  max-width:
+    620px;
+
+}
+
+
+.home-link-section h2 {
+
+  margin:
+    12px 0 22px;
+
+  font:
+    800 clamp(48px, 7vw, 86px)/.95 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    -.05em;
+
+}
+
+
+.home-link-section p {
+
+  margin:
+    0;
+
+  color:
+    #b8b2ac;
+
+  font-size:
+    14px;
+
+  line-height:
+    2.1;
+
+}
+
+
+.home-link-number {
+
+  color:
+    var(--red-dark);
+
+  font:
+    800 clamp(80px, 13vw, 180px)/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    -.08em;
+
+}
+
+
+.commission-home {
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(110,21,28,.16),
+      transparent 60%
+    );
+
+}
+
+
+.text-link {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    25px;
+
+  margin-top:
+    35px;
+
+  padding-bottom:
+    8px;
+
+  border-bottom:
+    1px solid var(--white);
+
+  font:
+    800 11px/1 "Montserrat",
+    sans-serif;
+
+  letter-spacing:
+    .16em;
+
+  transition:
+    gap .25s ease,
+    color .25s ease;
+
+}
+
+
+.text-link span {
+
+  font-size:
+    18px;
+
+  line-height:
+    8px;
+
+}
+
+
+.text-link:hover {
+
+  gap:
+    38px;
+
+  color:
+    var(--red-bright);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  padding: 50px 60px 30px;
+  background: #050505;
+  color: #fff;
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.footer-sns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-sns a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 90px;
+  height: 38px;
+  padding: 0 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-sns a:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+.site-footer small {
+  display: block;
+  margin-top: 25px;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   FOOTER / MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .site-footer {
+    padding: 40px 24px 25px;
+  }
+
+  .footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-sns {
+    flex-wrap: wrap;
+  }
+
+  .footer-sns a {
+    min-width: 80px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+
+@media (max-width: 900px) {
+
+  :root {
+    --header-height: 68px;
+  }
+
+
+  .site-header {
+
+    padding:
+      0 20px;
+
+  }
+
+
+  .logo-text {
+    display: none;
+  }
+
+
+  .global-nav {
+
+    gap:
+      18px;
+
+  }
+
+
+  .poster-stage {
+
+    height:
+      610px;
+
+  }
+
+
+  .poster-slide {
+
+    width:
+      235px;
+
+    flex-basis:
+      235px;
+
+  }
+
+
+  .poster-slide:not(.is-center) {
+
+    display:
+      none;
+
+  }
+
+
+  .genre-models {
+
+    gap:
+      20px;
+
+  }
+
+
+  .model-scene {
+
+    height:
+      260px;
+
+  }
+
+
+  .genre-icon {
+
+    width:
+      200px;
+
+    height:
+      200px;
+
+  }
+
+
+  .poster-character {
+
+    transform-origin:
+      center center;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+
+@media (max-width: 650px) {
+
+
+  .pickup-inner {
+
+    padding:
+      20px 20px 45px;
+
+  }
+
+
+  .pickup h1,
+  .genre-heading h2 {
+
+    font-size:
+      46px;
+
+  }
+
+
+  #pickup-title {
+
+    transform:
+      translateX(0);
+
+    gap:
+      10px;
+
+  }
+
+
+  #pickup-title img {
+
+    width:
+      50px;
+
+    height:
+      50px;
+
+  }
+
+
+  .poster-stage {
+
+    height:
+      570px;
+
+    margin-top:
+      35px;
+
+  }
+
+
+  .poster-slide {
+
+    width:
+      min(72vw, 290px);
+
+    flex-basis:
+      min(72vw, 290px);
+
+  }
+
+
+  .carousel-arrow {
+
+    width:
+      42px;
+
+    height:
+      42px;
+
+  }
+
+
+  .carousel-arrow--left {
+    left: 0;
+  }
+
+
+  .carousel-arrow--right {
+    right: 0;
+  }
+
+
+  .ticket-line {
+
+    flex-wrap:
+      wrap;
+
+    gap:
+      9px;
+
+    text-align:
+      center;
+
+  }
+
+
+  .genre-nav {
+
+    min-height:
+      auto;
+
+    padding:
+      90px 20px;
+
+  }
+
+
+  .genre-models {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      55px;
+
+    margin-top:
+      45px;
+
+  }
+
+
+  .model-scene {
+
+    height:
+      235px;
+
+  }
+
+
+  .genre-icon {
+
+    width:
+      190px;
+
+    height:
+      190px;
+
+  }
+
+
+  /* =======================================================
+     ABOUT / COMMISSION
+  ======================================================= */
+
+
+  .home-link-section {
+
+    min-height:
+      430px;
+
+    padding:
+      90px 25px;
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    justify-content:
+      center;
+
+    gap:
+      0;
+
+  }
+
+
+  .home-link-number {
+    display: none;
+  }
+
+
+  .home-link-section h2 {
+
+    font-size:
+      54px;
+
+  }
+
+
+  .film-strip {
+
+    height:
+      58px;
+
+  }
+
+
+  .film-holes {
+
+    gap:
+      14px;
+
+    padding:
+      0 8px;
+
+  }
+
+
+  .film-holes span {
+
+    flex-basis:
+      48px;
+
+    width:
+      48px;
+
+    height:
+      21px;
+
+    border-radius:
+      6px;
+
+  }
+
+
+  .poster-character--large {
+
+    width:
+      105px;
+
+    height:
+      140px;
+
+    font-size:
+      50px;
+
+  }
+
+
+  .poster-character--medium {
+
+    width:
+      86px;
+
+    height:
+      116px;
+
+    font-size:
+      42px;
+
+  }
+
+
+  .poster-character--small {
+
+    width:
+      66px;
+
+    height:
+      90px;
+
+    font-size:
+      32px;
+
+  }
+
+}
+
+
+/* =========================================================
+   ABOUT / COMMISSION SCROLL ANIMATION
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   初期状態
+--------------------------------------------------------- */
+
+
+/* 私について → 左から */
+
+.home-link-section:not(.commission-home) .home-link-copy {
+
+  opacity:
+    0;
+
+  transform:
+    translateX(-100px);
+
+  transition:
+
+    opacity .8s ease,
+
+    transform .8s
+      cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+/* ご依頼 → 右から */
+
+.home-link-section.commission-home .home-link-copy {
+
+  opacity:
+    0;
+
+  transform:
+    translateX(100px);
+
+  transition:
+
+    opacity .8s ease,
+
+    transform .8s
+      cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+/* ---------------------------------------------------------
+   表示された状態
+--------------------------------------------------------- */
+
+
+/* 私について */
+
+.home-link-section:not(.commission-home).scroll-visible
+.home-link-copy {
+
+  opacity:
+    1;
+
+  transform:
+    translateX(0);
+
+}
+
+
+/* ご依頼 */
+
+.home-link-section.commission-home.scroll-visible
+.home-link-copy {
+
+  opacity:
+    1;
+
+  transform:
+    translateX(0);
+
+}
+
+
+/* =========================================================
+   ABOUT：背景画像
+========================================================= */
+
+
+.home-link-section#about {
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  background:
+    #080707;
+
+}
+
+
+.home-link-section#about::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background-image:
+    url("images/about.png");
+
+  background-size:
+    cover;
+
+  background-position:
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  opacity:
+    0.7;
+
+  z-index:
+    0;
+
+}
+
+
+/* ABOUT画像の上に黒いグラデーション */
+
+.home-link-section#about::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,7,7,.55) 0%,
+      rgba(8,7,7,.35) 45%,
+      rgba(8,7,7,.10) 100%
+    );
+
+  z-index:
+    0;
+
+}
+
+
+/* ABOUTの文字・番号を画像より前に */
+
+.home-link-section#about .home-link-copy,
+.home-link-section#about .home-link-number {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+}
+
+
+/* =========================================================
+   ご依頼セクション：背景画像
+========================================================= */
+
+
+.home-link-section.commission-home {
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  background:
+    #080707;
+
+}
+
+
+.home-link-section.commission-home::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background-image:
+    url("images/work.png");
+
+  background-size:
+    cover;
+
+  background-position:
+    center;
+
+  background-repeat:
+    no-repeat;
+
+  opacity:
+    0.5;
+
+  z-index:
+    0;
+
+}
+
+
+/* ご依頼の文字・ボタンを画像より前に */
+
+.home-link-section.commission-home .home-link-copy,
+.home-link-section.commission-home .home-link-number {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+}

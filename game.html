@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GAME | HAREIRU</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="game-page">
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <div id="header"></div>
+
+
+  <!-- =========================
+       GAME
+  ========================== -->
+  <main class="game-main">
+
+    <section class="game-selector">
+
+      <!-- =====================
+           LEFT : GAME SCREEN
+      ====================== -->
+      <div class="game-screen-area">
+
+        <div class="game-screen-label">
+          <span>GAME PLAY</span>
+          <span class="screen-status" id="screenStatus">● PLAYABLE</span>
+        </div>
+
+
+        <div class="game-screen">
+
+          <div class="screen-grid"></div>
+
+          <div class="screen-scanlines"></div>
+
+          <div class="screen-corner screen-corner-tl"></div>
+          <div class="screen-corner screen-corner-tr"></div>
+          <div class="screen-corner screen-corner-bl"></div>
+          <div class="screen-corner screen-corner-br"></div>
+
+
+          <div class="player-label">
+            PLAYER 1
+          </div>
+
+
+          <!-- =====================
+               01 DEMONICITY
+          ====================== -->
+          <div
+            class="game-visual-item is-active"
+            data-game="demonisity"
+          >
+
+            <video
+              class="game-video"
+              src="game/01.mp4"
+              autoplay
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="video-overlay"></div>
+
+            <div class="video-loading">
+              <span>デモニシティの冒険</span>
+              <span>PLAYABLE</span>
+            </div>
+
+          </div>
+
+
+          <!-- =====================
+               02 RAPID RABBIT
+          ====================== -->
+          <div
+            class="game-visual-item"
+            data-game="rabbit"
+          >
+
+            <video
+              class="game-video"
+              src="game/02.mp4"
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="video-overlay"></div>
+
+            <div class="video-loading">
+              <span>RAPID RABBIT</span>
+              <span>ARCHIVE</span>
+            </div>
+
+          </div>
+
+
+          <!-- =====================
+               03 LANEDY
+          ====================== -->
+          <div
+            class="game-visual-item"
+            data-game="lanedy"
+          >
+
+            <video
+              class="game-video"
+              src="game/03.mp4"
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+
+            <div class="video-overlay"></div>
+
+            <div class="video-loading">
+              <span>LANEDY</span>
+              <span>IN DEVELOPMENT</span>
+            </div>
+
+          </div>
+
+
+          <div class="screen-number">
+            <span id="screenNumber">01</span>
+            <span>/ 03</span>
+          </div>
+
+
+          <div
+            class="insert-coin"
+            id="screenMessage"
+          >
+            INSERT COIN
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================
+           RIGHT : GAME MENU
+      ====================== -->
+      <div class="game-menu">
+
+        <div class="game-menu-top">
+  <span class="menu-small">HAREIRU</span>
+
+  <div class="menu-top-right">
+    <span class="menu-small">GAME SELECT</span>
+
+    <button
+      type="button"
+      class="bgm-toggle"
+      id="bgmToggle"
+      aria-label="ゲーム音声をON/OFF"
+      aria-pressed="false"
+    >
+      <span class="bgm-icon">♫</span>
+      <span id="bgmText">OFF</span>
+    </button>
+  </div>
+</div>
+
+        <div class="game-menu-title">
+          <span class="title-line"></span>
+
+          <h1>SELECT GAME</h1>
+
+          <span class="title-line"></span>
+        </div>
+
+
+        <!-- =====================
+             GAME LIST
+        ====================== -->
+        <div class="game-list">
+
+          <!-- 01 -->
+          <button
+            type="button"
+            class="game-choice is-active"
+            data-game="demonisity"
+          >
+
+            <span class="choice-cursor">▶</span>
+
+            <span class="choice-number">
+              01
+            </span>
+
+            <span class="choice-name">
+              デモニシティの冒険
+            </span>
+
+          </button>
+
+
+          <!-- 02 -->
+          <button
+            type="button"
+            class="game-choice"
+            data-game="rabbit"
+          >
+
+            <span class="choice-cursor">▶</span>
+
+            <span class="choice-number">
+              02
+            </span>
+
+            <span class="choice-name">
+              RAPID RABBIT
+            </span>
+
+          </button>
+
+
+          <!-- 03 -->
+          <button
+            type="button"
+            class="game-choice"
+            data-game="lanedy"
+          >
+
+            <span class="choice-cursor">▶</span>
+
+            <span class="choice-number">
+              03
+            </span>
+
+            <span class="choice-name">
+              LANEDY
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <!-- =====================
+             UP / DOWN
+        ====================== -->
+        <div class="game-arrows">
+
+          <button
+            type="button"
+            class="game-arrow"
+            id="gamePrev"
+            aria-label="前のゲーム"
+          >
+            ▲
+          </button>
+
+          <div class="arrow-label">
+            SELECT
+          </div>
+
+          <button
+            type="button"
+            class="game-arrow"
+            id="gameNext"
+            aria-label="次のゲーム"
+          >
+            ▼
+          </button>
+
+        </div>
+
+
+        <!-- =====================
+             INFO
+        ====================== -->
+        <div class="game-info">
+
+          <div class="info-line">
+            <span class="info-label">TITLE</span>
+
+            <span
+              class="info-value"
+              id="infoTitle"
+            >
+              デモニシティの冒険
+            </span>
+          </div>
+
+
+          <div class="info-line">
+            <span class="info-label">TYPE</span>
+
+            <span
+              class="info-value"
+              id="infoType"
+            >
+              ADVENTURE
+            </span>
+          </div>
+
+
+          <div class="info-line">
+            <span class="info-label">STATUS</span>
+
+            <span
+              class="info-value"
+              id="infoStatus"
+            >
+              PLAYABLE
+            </span>
+          </div>
+
+        </div>
+
+
+        <!-- =====================
+             START
+        ====================== -->
+        <a
+          href="https://www.freem.ne.jp/win/game/32931"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="game-start"
+          id="gameStart"
+        >
+          <span class="start-arrow">▶</span>
+
+          <span id="startText">
+            START
+          </span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BOTTOM UI
+    ========================== -->
+    <section class="game-bottom">
+
+      <div class="bottom-line"></div>
+
+      <div class="bottom-content">
+
+        <span>
+          HAREIRU GAME ARCHIVE
+        </span>
+
+        <span>
+          SELECT YOUR GAME
+        </span>
+
+        <span>
+          01 — 03
+        </span>
+
+      </div>
+
+      <div class="bottom-line"></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <div id="footer"></div>
+  <script src="script.js"></script>
+  <script src="game.js"></script>
+
+</body>
+</html>
