@@ -1181,22 +1181,71 @@ span:nth-child(2) {
     text-align: left;
   }
 
+
+  /* =======================================================
+     CHARACTER SELECTOR
+     スマホ・タブレットでは横スクロール
+  ======================================================= */
+
   .character-selector {
-  display: grid;
+    display: flex;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    gap: 14px;
 
-  gap: 14px;
+    overflow-x: auto;
+    overflow-y: visible;
 
-  overflow-x: visible;
+    padding:
+      7px 2px 14px;
 
-  padding-bottom: 0;
-}
+    scroll-snap-type: x mandatory;
 
-.character-option {
-  min-width: 0;
-}
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .character-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .character-option {
+    flex:
+      0 0 110px;
+
+    width: 110px;
+
+    min-width: 110px;
+
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
+  }
+
+
+  /* =======================================================
+     SWIPE HINT
+     横スクロールできることを常に表示
+  ======================================================= */
+
+  .character-select::after {
+    content: "←  SWIPE  →";
+
+    display: block;
+
+    margin-top: 3px;
+
+    text-align: right;
+
+    color: #777;
+
+    font:
+      600 8px/1
+      "Montserrat",
+      sans-serif;
+
+    letter-spacing: .18em;
+  }
 
 }
 
