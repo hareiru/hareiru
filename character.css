@@ -1241,7 +1241,7 @@ span:nth-child(2) {
 
   /* =======================================================
      SWIPE HINT
-     常に表示
+     中央・赤字で表示
   ======================================================= */
 
   .character-swipe {
@@ -1250,19 +1250,18 @@ span:nth-child(2) {
     width: 100%;
 
     margin:
-      3px 0 0;
+      10px 0 0;
 
-    padding:
-      4px 2px 0;
+    padding: 0;
 
     box-sizing: border-box;
 
-    text-align: right;
+    text-align: center;
 
-    color: #777;
+    color: #d92323;
 
     font:
-      600 8px/1.4
+      700 13px/1.4
       "Montserrat",
       sans-serif;
 
@@ -1271,6 +1270,8 @@ span:nth-child(2) {
     white-space: nowrap;
 
     pointer-events: none;
+
+    opacity: .9;
   }
 
 }
