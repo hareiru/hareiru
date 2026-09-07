@@ -1047,6 +1047,16 @@ span:nth-child(2) {
 
 
 /* =========================================================
+   SWIPE HINT
+   スマホ・タブレットのみ表示
+========================================================= */
+
+.character-swipe {
+  display: none;
+}
+
+
+/* =========================================================
    BOTTOM
 ========================================================= */
 
@@ -1190,6 +1200,8 @@ span:nth-child(2) {
   .character-selector {
     display: flex;
 
+    width: 100%;
+
     gap: 14px;
 
     overflow-x: auto;
@@ -1198,11 +1210,15 @@ span:nth-child(2) {
     padding:
       7px 2px 14px;
 
+    box-sizing: border-box;
+
     scroll-snap-type: x mandatory;
 
     -webkit-overflow-scrolling: touch;
 
     scrollbar-width: none;
+
+    touch-action: pan-x;
   }
 
   .character-selector::-webkit-scrollbar {
@@ -1225,26 +1241,36 @@ span:nth-child(2) {
 
   /* =======================================================
      SWIPE HINT
-     横スクロールできることを常に表示
+     常に表示
   ======================================================= */
 
-  .character-select::after {
-    content: "←  SWIPE  →";
-
+  .character-swipe {
     display: block;
 
-    margin-top: 3px;
+    width: 100%;
+
+    margin:
+      3px 0 0;
+
+    padding:
+      4px 2px 0;
+
+    box-sizing: border-box;
 
     text-align: right;
 
     color: #777;
 
     font:
-      600 8px/1
+      600 8px/1.4
       "Montserrat",
       sans-serif;
 
     letter-spacing: .18em;
+
+    white-space: nowrap;
+
+    pointer-events: none;
   }
 
 }
