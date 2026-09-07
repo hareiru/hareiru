@@ -2576,3 +2576,146 @@ button {
     1;
 
 }
+/* =========================================================
+   MOBILE HEADER
+========================================================= */
+
+.menu-toggle {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+
+@media (max-width: 700px) {
+
+  .site-header {
+    padding: 14px 20px;
+    min-height: 60px;
+    box-sizing: border-box;
+  }
+
+  .site-header .logo {
+    position: relative;
+    z-index: 102;
+  }
+
+  .site-header .logo-text {
+    display: inline;
+  }
+
+
+  /* PC用ナビを非表示 */
+  .global-nav {
+    display: none;
+  }
+
+
+  /* ハンバーガーボタン */
+  .menu-toggle {
+    position: relative;
+    z-index: 102;
+
+    display: flex;
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: #fff;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+
+  /* 開いたときの× */
+  .site-header.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-header.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+
+  /* 展開メニュー */
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px 20px 20px;
+
+    background: rgba(5, 5, 5, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    z-index: 101;
+  }
+
+  .site-header.menu-open .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+
+  .mobile-nav a {
+    display: block;
+
+    padding: 15px 5px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav a:active {
+    opacity: 0.6;
+  }
+}

@@ -1209,3 +1209,52 @@ if (footerElement) {
 
 
 })();
+/* =========================================================
+   MOBILE HEADER MENU
+========================================================= */
+
+document.addEventListener("click", (event) => {
+
+  const button = event.target.closest(".menu-toggle");
+
+  if (!button) return;
+
+  const header = button.closest(".site-header");
+
+  if (!header) return;
+
+  const isOpen = header.classList.toggle("menu-open");
+
+  button.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
+  button.setAttribute(
+    "aria-label",
+    isOpen ? "メニューを閉じる" : "メニューを開く"
+  );
+
+});
+
+
+document.addEventListener("click", (event) => {
+
+  const link = event.target.closest(".mobile-nav a");
+
+  if (!link) return;
+
+  const header = link.closest(".site-header");
+
+  if (!header) return;
+
+  header.classList.remove("menu-open");
+
+  const button = header.querySelector(".menu-toggle");
+
+  if (button) {
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "メニューを開く");
+  }
+
+});
